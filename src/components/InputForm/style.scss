@@ -1,0 +1,44 @@
+.container-input-component {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: .5em;
+    position: relative;
+    .label-input {
+        font-size: 1.1em;
+    }
+    .container-input-icon {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        input {
+            border: none;
+            outline: none;
+            font-size: 1.2em;
+            padding: 0 10px 0 0;
+            width: 100%;
+        }
+        textarea{
+            border: none;
+            outline: none;
+            font-size: 1.2em;
+            padding: .5em .5em .5em 0;
+            resize: none;
+            min-height: 75px;
+            flex: 1;
+        }
+        .icon-input {
+            font-size: 3em;
+            padding: 0 10px;
+        }
+    }
+    .error-input {
+        color: rgb(231, 81, 81);
+        font-weight: 600;
+        position: absolute;
+        right: 0;
+        bottom: -28px;
+    }
+}

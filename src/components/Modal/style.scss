@@ -1,0 +1,16 @@
+@use '../../utils/mixins' as mixin;
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.904);
+    animation: fade_in .2s linear;
+    @include mixin.fade-in-component;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}

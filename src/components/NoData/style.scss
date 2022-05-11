@@ -1,0 +1,41 @@
+@use '../../utils/variables.scss'as variable;
+
+.container-nodata {
+    // outline: auto;
+    margin: 2em 0;
+    text-align: center;
+    animation: div-animation 1s linear;
+
+    .message-nodata {
+        font-family: variable.$primary-font;
+        font-weight: 600;
+
+        &.xl {
+            font-size: 3em;
+        }
+
+        &.md {
+            font-size: 2em;
+        }
+
+        &.sm {
+            font-size: 1em;
+        }
+    }
+
+    .img-nodata {
+        transform: rotate(10deg);
+    }
+
+    @keyframes div-animation {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

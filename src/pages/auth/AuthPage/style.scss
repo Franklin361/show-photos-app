@@ -1,0 +1,45 @@
+@use "../../../utils/variables" as v;
+@use "../../../utils/mixins" as mixin;
+
+.form-auth {
+    padding: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    @include mixin.glassmorphism;
+
+    &.login{
+        border-radius: 0 10px 10px 0;
+    }
+    &.sign-up{
+        border-radius: 10px 0 0 10px;
+    }
+    .title-auth-form {
+        font-size: 3em;
+        font-family: v.$secondary-font;
+        font-weight: 900;
+    }
+}
+.container-form{
+    width: 100%;
+}
+.container-form > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    .btn_submit {
+        @include mixin.button-component($bg: v.$primary-color, $txt-color: #f2f2f2);
+        margin-top: 1em;
+        padding: 1em 0;
+    }
+}
+
+.loading-save-btn{
+    color: slateblue;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 1em 0;
+    animation: fadein .6s infinite alternate ease-in-out;
+}

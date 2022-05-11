@@ -1,0 +1,30 @@
+@use '../../../utils/mixins' as mixin;
+.container-modal{
+    width: 500px;
+    padding: 1em ;
+    @include mixin.glassmorphism;
+   text-align: center;
+   .container-btn-modal{
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0 1em 0;
+       .btn-modal-confirmation{
+           @include mixin.button-component;
+           background-color: white;
+           transition: .2s linear;
+           font-size: 1.2em;
+       }
+       .delete {
+           &:hover{
+               background-color: rgb(231, 52, 52);
+               color: white;
+           }
+       }
+       .no-delete {
+           &:hover{
+               background-color:slateblue;
+               color: white;
+           }
+       }
+   }
+}

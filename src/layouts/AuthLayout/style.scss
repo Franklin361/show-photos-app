@@ -1,0 +1,52 @@
+@use "../../utils/mixins" as mixin;
+
+.button {
+    @include mixin.button-component;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 2em auto;
+    gap: 1em;
+    .container-img {
+        // outline: auto;
+        background-color: rgb(109, 71, 150);
+        overflow: hidden;
+        & > img {
+            object-fit: cover;
+            vertical-align: top;
+        }
+        &.order-1 {
+            order: 1;
+            border-radius: 0px 10px 10px 0px;
+            & > img {
+                height: 639px;
+                width: 100%;
+            }
+        }
+        &.order-2 {
+            order: 0;
+            border-radius: 10px 0px 0px 10px;
+            & > img {
+                height: 433px;
+            }
+        }
+        
+    }
+}
+
+.blob-auth {
+    position: fixed;
+    width: 500px;
+    z-index: -1;
+    &.left {
+        bottom: -300px;
+        left: -100px;
+    }
+    &.right {
+        top: -80px;
+        right: -60px;
+        transform: rotate(45deg);
+    }
+}

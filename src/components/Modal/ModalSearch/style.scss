@@ -1,0 +1,15 @@
+@use '../../../utils/mixins' as mixin;
+
+.container-search-modal{
+    width: 500px;
+    padding: 1em ;
+    @include mixin.glassmorphism;
+   
+}
+.instructions-modal{
+    margin: 1em 0;
+}
+.title-modal{
+    text-align: center;
+    font-size: 2.5em;
+}

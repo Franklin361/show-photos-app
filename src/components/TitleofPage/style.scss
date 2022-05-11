@@ -1,0 +1,23 @@
+@use '../../utils/mixins' as mixin;
+
+.container-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    .title-page{
+        text-align: right;
+        flex: 1;
+    }
+    .btn-back{
+        @include mixin.button-component;
+        background-color: slateblue;
+        min-width: 80px;
+        color: white;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        .icon-btn-back{
+            font-size: 1.5em;
+        }
+    }
+}

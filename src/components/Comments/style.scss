@@ -1,0 +1,70 @@
+@use '../../utils/mixins' as mixin;
+
+.title-comments{
+    padding-top: 2em;
+    font-weight: 400;
+}
+.section-comments{
+    max-height: 560px;
+    overflow-y: scroll;
+    // outline: auto;
+    padding: 1em 10px;
+    margin-bottom: 1em;
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: slateblue;
+        border-radius: 20px;
+    }
+    .comments{
+        // outline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        // margin-top: 2em;
+        .item-comment{
+            background: rgb(2, 2, 2);
+            padding: 1em;
+            border-radius: 10px;
+            animation: fadeInUp .5s linear;
+            .author-comment{
+                font-weight: bold;
+                text-decoration: underline  ;
+            }
+            .date-comment{
+                text-align: right;
+                color: gray;
+                font-weight: bold;
+                font-size: .9em;
+            }
+            .container-msg{
+                background-color: rgba(128, 128, 128, 0.089);
+                margin: .5em 0;
+                padding: .5em;
+                border-radius: 5px;
+            }
+        }
+        @keyframes fadeInUp {
+            0%{ transform: translateY(-100px); opacity: 0; }
+            100%{ transform:  translateY(0); opacity: 1}
+        }
+    }
+
+}
+
+
+
+.btn_submit-comment{
+    @include mixin.button-component;
+    background-color: slateblue;
+    color: white;
+}
+
+.form_formik-comments{
+    margin-top: 1em;
+}

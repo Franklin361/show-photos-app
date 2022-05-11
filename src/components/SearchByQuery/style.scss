@@ -1,0 +1,19 @@
+@use "../../utils/variables" as v;
+@use "../../utils/mixins" as mixin;
+
+.section-query-search{
+    @include mixin.center-component;
+    padding: .5em 0;
+    // justify-content: space-evenly;
+    justify-content: space-between;
+    .result{
+        font-size: 1.1em;
+    }
+    .btn-clear-search {
+        @include mixin.button-component;
+        background-color: white;
+        .close-icon{
+            font-size: 1.5em;
+        }
+    }
+}

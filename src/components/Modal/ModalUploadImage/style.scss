@@ -1,0 +1,151 @@
+@use "../../../utils/mixins" as mixin;
+.container-upload-modal {
+    padding: 0em 1.5em 1em 2em;
+    @include mixin.glassmorphism;
+    max-height: 85vh;
+    overflow-y: scroll;
+    position: relative;
+    z-index: 9999;
+    min-width: 600px;
+    max-width: 600px;
+    
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(126, 14, 231);
+        border-radius: 20px;
+    }
+    .container-btn-modal{
+        display: flex;
+        gap: 3em;
+        .btn_submit{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            .icon-btn{
+                font-size: 1.4em;
+            }
+            &:hover{
+                background-color: slateblue;
+            }
+            &.cancel {
+                background-color: rgb(247, 55, 55);
+                &:hover{
+                    background-color: rgb(224, 28, 28);
+                }
+            }
+        }
+    }
+}
+.loading-save-btn{
+    color: slateblue;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 1em 0;
+    animation: fadein .5s infinite alternate ease-in-out;
+}
+
+@keyframes fadein{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+.instructions-modal {
+    margin: 1em 0;
+}
+.title-modal {
+    text-align: center;
+    font-size: 2.5em;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 9;
+    padding: 0.5em 0;
+}
+.drag-drop {
+    // margin-top: 1em;
+    background-color: #f2f2f2;
+    outline: 3px dashed rgb(238, 238, 238);
+    min-height: 100px;
+    color: rgba(0, 0, 0, 0.562);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    &.dragging {
+        background-color: rgba(0, 0, 0, 0.479);
+        color: white;
+    }
+    &:hover{
+        background-color: #f2f2f2ec;
+    }
+}
+
+.image-selected {
+    text-align: center;
+    img {
+        flex: 1;
+        object-fit: contain;
+        max-height: 450px;
+        min-width: 400px;
+        max-width: 700px;
+        // width: 80%;
+        border-radius: 5px;
+    }
+    .container-buttons-image-selected {
+        display: flex;
+        gap: 1em;
+        margin-top: 1em;
+        button{
+            @include mixin.button-component;
+            color: white;
+            padding: 1em 0;
+            // width: 20%;
+            flex: 1;
+            .icon-btn-img{
+                font-size: 1.5em;
+            }
+            &:nth-child(1){
+                background-color: rgb(241, 200, 63);
+                color: black;
+            }
+            &:nth-child(2){
+                background-color: rgb(241, 90, 63);
+                color: black;
+            }
+        }
+    }
+}
+
+.container-image-selected{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    img {
+        // flex: 1;
+        object-fit: contain;
+        max-height: 450px;
+        min-width: 400px;
+        max-width: 700px;
+        // width: 80%;
+        border-radius: 5px;
+    }
+    .btn-delete-image{
+        @include mixin.button-component;
+        background-color: white;
+        width: 80%;
+        .edit-image-selected{
+            font-size: 1.5em;
+        }
+    }
+}

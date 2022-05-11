@@ -1,0 +1,29 @@
+@use "../../utils/variables" as v;
+
+.container-layout-home {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+    .container-page {
+        width: 90%;
+        margin: auto;
+        min-height: 100vh;
+    }
+    .wave{
+        position: absolute;
+        top: -110px;
+        transform: rotate(180deg);
+        z-index: -1;
+        animation: moving 3s ease;
+        & > path {
+            fill: rgba(105, 90, 205, 0.644);
+            filter: drop-shadow(10px 1px 20px #000000);
+        }
+        @keyframes moving {
+            0%{ top: -400px; }
+            50%{ top: -0px; }
+            100%{ top: -110px; }
+        }
+    }
+    
+}
