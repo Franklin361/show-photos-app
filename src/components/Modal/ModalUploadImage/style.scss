@@ -223,6 +223,22 @@
         
     }
     
+    .image-selected {
+        img {
+            
+            object-fit: contain;
+            max-height: auto;
+            min-width: auto;
+            max-width: auto;
+            width: 80%;
+            border-radius: 5px;
+        }
+    
+        .container-buttons-image-selected {
+            flex-direction: column;
+
+        }
+    }
 }
 
 @media screen and (max-width: 390px) {
