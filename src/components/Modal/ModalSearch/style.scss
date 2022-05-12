@@ -13,3 +13,15 @@
     text-align: center;
     font-size: 2.5em;
 }
+
+@media screen and (max-width: 550px) {
+    .container-search-modal{
+        width: 90%;
+        margin: auto;
+        font-size: 1.3em;
+        .title-modal{
+            font-size: 1.8em;
+        }
+    }
+    
+}

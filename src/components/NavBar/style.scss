@@ -1,5 +1,5 @@
-@use "../../utils/variables" as v;
-@use "../../utils/mixins" as mixin;
+@use "../../utils/variables"as v;
+@use "../../utils/mixins"as mixin;
 
 .navigation {
     background-color: v.$primary-color;
@@ -14,18 +14,21 @@
     position: sticky;
     top: 1em;
     z-index: 2;
+
     .logo {
         text-decoration: line-through;
         font-size: 2em;
         font-weight: bold;
         font-family: v.$secondary-font;
         display: flex;
+
         .special-text {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 7px;
             position: relative;
+
             &::after {
                 content: "";
                 position: absolute;
@@ -36,22 +39,23 @@
                 border-radius: 10px 50px 50px 10px;
             }
         }
+
         .move-text {
-            background-image: linear-gradient(
-                to left top,
-                #ffffff00 40%,
-                #ffffff 60%,
-                v.$txt-color 100%
-            );
+            background-image: linear-gradient(to left top,
+                    #ffffff00 40%,
+                    #ffffff 60%,
+                    v.$txt-color 100%);
             background-size: 200% 200%;
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             animation: movingGradient 4s linear infinite alternate;
+
             @keyframes movingGradient {
                 from {
                     background-position: 0 0;
                 }
+
                 to {
                     background-position: 100% 100%;
                 }
@@ -59,15 +63,17 @@
         }
     }
 }
+
 .container-nav {
     overflow: hidden;
     max-height: 100vh;
     position: sticky;
     top: 0;
+
     .btn-menu {
         @include mixin.center-component;
         padding: 0 1em;
-        width: 100%;
+
         background-color: #000000;
         cursor: pointer;
         transition: all 0.3s linear;
@@ -77,33 +83,38 @@
         position: fixed;
         border: 2px solid rgba(255, 255, 255, 0.37);
         top: 0;
-        
+
         .icon-logo {
             font-size: 2em;
         }
     }
+
     .none {
         display: none;
     }
-    .input-menu:checked ~ .navigation-home {
+
+    .input-menu:checked~.navigation-home {
         width: 0;
         padding: 0;
     }
-    .input-menu:checked ~ .btn-menu {
-        
+
+    .input-menu:checked~.btn-menu {
+
         border-radius: 0px 50px 50px 0px;
         width: 60px;
         height: 60px;
         top: 1em;
-        
+
         // transition-delay: .1s;
     }
-    .input-menu:checked ~ .navigation-home > .logo,
-    .input-menu:checked ~ .navigation-home > .section-links {
+
+    .input-menu:checked~.navigation-home>.logo,
+    .input-menu:checked~.navigation-home>.section-links {
         transition-delay: 0s;
         opacity: 0;
     }
 }
+
 .navigation-home {
     width: 250px;
     background-color: rgb(0, 0, 0);
@@ -115,17 +126,20 @@
     flex-direction: column;
     gap: 2em;
     transition: all 0.3s linear;
+
     .logo {
         transition-delay: 0.3s;
         position: sticky;
         top: 4em;
-        & > span {
+
+        &>span {
             display: inline-block;
             width: 100%;
             font-weight: bold;
             text-align: center;
             font-size: 3em;
         }
+
         .icon-logo {
             position: absolute;
             top: 50%;
@@ -136,12 +150,13 @@
             color: rgba(255, 255, 255, 0.322);
         }
     }
+
     .section-links {
         transition-delay: 0.3s;
         @include mixin.center-component;
         flex-direction: column;
         gap: 1em;
-        
+
         .item-link {
             all: unset;
             cursor: pointer;
@@ -155,20 +170,68 @@
             position: relative;
             font-size: 1.1em;
             border-radius: 5px;
+
             .icon-menu {
                 font-size: 1.5em;
             }
+
             &:hover {
                 background-color: rgba(255, 253, 253, 0.26);
+
                 .pop-up {
                     opacity: 1;
                 }
             }
-            &.active-link{
+
+            &.active-link {
                 background-color: slateblue;
                 pointer-events: none;
             }
         }
-        
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigation {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em 0;
+    }
+
+    .navigation-home {
+        width: 100%;
+        font-size: 20px;
+        padding-top: 3em;
+        .section-links{
+            .item-link{
+                width: 80%;
+            }
+        }
+    }
+
+    .container-nav {
+        .btn-menu {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .navigation {
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .navigation-home {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    .container-nav {
+        position: relative;
     }
 }

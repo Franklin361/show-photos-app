@@ -68,3 +68,22 @@
 .form_formik-comments{
     margin-top: 1em;
 }
+
+@media screen and (max-width: 550px){
+    .btn_submit-comment{
+        width: 100%;
+        border: none;
+        padding: 1em 0;
+        margin-top: 2em;
+    }
+}
+@media screen and (max-width: 390px){
+    .container-image-single{
+        outline: auto;
+        
+    }
+    .input-text-area{
+        width: 100%;
+    }
+   
+}

@@ -28,3 +28,14 @@
        }
    }
 }
+
+@media screen and (max-width: 550px) {
+    .container-modal{
+        width: 80%;
+        margin: auto;
+        .container-btn-modal{
+            flex-direction: column;
+            gap: 1em;
+        }
+    }
+}

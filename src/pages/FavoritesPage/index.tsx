@@ -17,7 +17,7 @@ export const FavoritesPage = () => {
 
     return (
         <>
-            <Title label="My favorite photos 😙" mustBeBack />
+            <Title label="Favorites 😙" mustBeBack />
             <hr />
             {
                 loading ? <Loader /> : showDataOrError

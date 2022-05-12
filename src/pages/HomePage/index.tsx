@@ -16,7 +16,7 @@ const props: Pick<PropsUseGetPost, 'img' | 'msg' | 'typeButtons'> = {
 
 export const HomePage = () => {
     const [searchParams] = useSearchParams();
-    const queryParams = useMemo(()=>searchParams.get("q"), [searchParams]);
+    const queryParams = useMemo(() => searchParams.get("q"), [searchParams]);
     const filter = useFilterSelectedStore(state => state.filter)
 
     const { loading, showDataOrError } = useGetPost({
@@ -24,28 +24,28 @@ export const HomePage = () => {
         query: queryParams ? GET_BY_DESC : GET_SORT,
         typeAccesData: queryParams ? 'getPostByDesc' : 'getPostSort',
         variables: {
-            ...(queryParams ? { description: queryParams }: {typeSort: filter})
+            ...(queryParams ? { description: queryParams } : { typeSort: filter })
         }
     })
 
-const existQuery = () => {
-    if (queryParams) return <SearchByQuery query={queryParams} />;
+    const existQuery = () => {
+        if (queryParams) return <SearchByQuery query={queryParams} />;
 
-    return <>
-        {!loading && <OpenModalButton icon="search" typeModal='search' />}
-        <FilterBar />
-    </>
-};
+        return <>
+            {!loading && <OpenModalButton icon="search" typeModal='search' />}
+            <FilterBar />
+        </>
+    };
 
-return (
-    <>
-        <Title label="Home 🏘️" />
-        <hr />
-        {existQuery()}
-        <hr />
-        {
-            loading ? <Loader /> : showDataOrError
-        }
-    </>
-);
+    return (
+        <>
+            <Title label="Home 🏘️" />
+            <hr />
+            {existQuery()}
+            <hr />
+            {
+                loading ? <Loader /> : showDataOrError
+            }
+        </>
+    );
 };

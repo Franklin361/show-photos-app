@@ -18,9 +18,7 @@ export const ImageInformation = (post: GetPostByID) => {
 
     return (
         <section className='grid_section'>
-            <div className='image-selected'>
-                <img src={url_image} alt='Card' width={100} className='img-section' />
-            </div>
+            <img src={url_image} alt='Card' width={100} className='img-section' />
 
             <section className='information'>
                 <p className='with-subtitle author-info'>

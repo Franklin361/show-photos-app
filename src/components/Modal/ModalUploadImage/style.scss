@@ -1,4 +1,5 @@
-@use "../../../utils/mixins" as mixin;
+@use "../../../utils/mixins"as mixin;
+
 .container-upload-modal {
     padding: 0em 1.5em 1em 2em;
     @include mixin.glassmorphism;
@@ -8,10 +9,11 @@
     z-index: 9999;
     min-width: 600px;
     max-width: 600px;
-    
+
     &::-webkit-scrollbar {
         width: 5px;
     }
+
     &::-webkit-scrollbar-track {
         background: transparent;
     }
@@ -20,30 +22,37 @@
         background-color: rgb(126, 14, 231);
         border-radius: 20px;
     }
-    .container-btn-modal{
+
+    .container-btn-modal {
         display: flex;
         gap: 3em;
-        .btn_submit{
+
+        .btn_submit {
             flex: 1;
             display: flex;
             align-items: center;
             gap: 1em;
-            .icon-btn{
+
+            .icon-btn {
                 font-size: 1.4em;
             }
-            &:hover{
+
+            &:hover {
                 background-color: slateblue;
             }
+
             &.cancel {
                 background-color: rgb(247, 55, 55);
-                &:hover{
+
+                &:hover {
                     background-color: rgb(224, 28, 28);
                 }
             }
         }
     }
 }
-.loading-save-btn{
+
+.loading-save-btn {
     color: slateblue;
     font-size: 1.2em;
     text-align: center;
@@ -51,14 +60,21 @@
     animation: fadein .5s infinite alternate ease-in-out;
 }
 
-@keyframes fadein{
-    0%{ opacity: 0; }
-    100%{ opacity: 1; }
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .instructions-modal {
     margin: 1em 0;
+    text-align: center;
 }
+
 .title-modal {
     text-align: center;
     font-size: 2.5em;
@@ -69,6 +85,7 @@
     z-index: 9;
     padding: 0.5em 0;
 }
+
 .drag-drop {
     // margin-top: 1em;
     background-color: #f2f2f2;
@@ -79,18 +96,22 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    text-align: center;
     cursor: pointer;
+
     &.dragging {
         background-color: rgba(0, 0, 0, 0.479);
         color: white;
     }
-    &:hover{
+
+    &:hover {
         background-color: #f2f2f2ec;
     }
 }
 
 .image-selected {
     text-align: center;
+
     img {
         flex: 1;
         object-fit: contain;
@@ -100,24 +121,29 @@
         // width: 80%;
         border-radius: 5px;
     }
+
     .container-buttons-image-selected {
         display: flex;
         gap: 1em;
         margin-top: 1em;
-        button{
+
+        button {
             @include mixin.button-component;
             color: white;
             padding: 1em 0;
             // width: 20%;
             flex: 1;
-            .icon-btn-img{
+
+            .icon-btn-img {
                 font-size: 1.5em;
             }
-            &:nth-child(1){
+
+            &:nth-child(1) {
                 background-color: rgb(241, 200, 63);
                 color: black;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 background-color: rgb(241, 90, 63);
                 color: black;
             }
@@ -125,12 +151,13 @@
     }
 }
 
-.container-image-selected{
+.container-image-selected {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1em;
+
     img {
         // flex: 1;
         object-fit: contain;
@@ -140,12 +167,84 @@
         // width: 80%;
         border-radius: 5px;
     }
-    .btn-delete-image{
+
+    .btn-delete-image {
         @include mixin.button-component;
         background-color: white;
         width: 80%;
-        .edit-image-selected{
+
+        .edit-image-selected {
             font-size: 1.5em;
         }
     }
+}
+
+@media screen and (max-width: 600px) {
+    .container-upload-modal {
+        width: 90%;
+        margin: auto;
+        min-width: auto;
+    }
+
+    .title-modal {
+        text-align: center;
+        font-size: 2.5em;
+        position: relative;
+        top: 0;
+        background-color: black;
+        border-radius: 10px;
+        z-index: 9;
+        padding: 0.5em 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container-upload-modal {
+        width: 80%;
+        margin: auto;
+        min-width: auto;
+        .container-btn-modal{
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+  
+    .container-image-selected {
+        
+        img {
+            // flex: 1;
+            object-fit: contain;
+            max-height: auto;
+            min-width: auto;
+            max-width: auto;
+            width: 90%;
+            border-radius: 5px;
+        }
+        
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+
+    .container-upload-modal {
+        width: 60%;
+        margin: auto;
+        min-width: auto;
+    }
+  
+    .container-image-selected {
+    
+        img {
+            // flex: 1;
+            object-fit: contain;
+            max-height: auto;
+            min-width: auto;
+            max-width: auto;
+            width: 90%;
+            border-radius: 5px;
+        }
+
+    }
+
 }

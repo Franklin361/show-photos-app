@@ -5,13 +5,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    gap: 2em;
+    gap: 1.5em;
     min-height: 70vh;
 
     .img-section {
         width: 100%;
         max-height: 430px;
-        min-width: 700px;
+        min-width: 600px;
         object-fit: contain;
         border-radius: 5px;
     }
@@ -22,6 +22,7 @@
         min-height: 100%;
         min-width: 100%;
         position: relative;
+
         p {
             font-size: 1.4em;
         }
@@ -49,7 +50,7 @@
                 font-weight: bold;
             }
 
-            &.description> span {
+            &.description>span {
                 background-color: rgba(0, 0, 0, 0.349);
                 padding: .5em;
                 font-size: 20px;
@@ -93,10 +94,12 @@
             justify-content: space-around;
             gap: 1em;
             align-items: center;
-            & > div{ 
+
+            &>div {
                 flex: 1;
             }
-            & > div > .btn-like {
+
+            &>div>.btn-like {
                 text-align: center;
                 @include mixin.button-component;
                 background: slateblue;
@@ -106,20 +109,25 @@
                 width: 100%;
                 overflow: hidden;
             }
-            & > div > input {
+
+            &>div>input {
                 display: none;
-                &.like:checked ~ label{
+
+                &.like:checked~label {
                     background-color: rgb(0, 0, 0);
-                    .like-number{
+
+                    .like-number {
                         animation: changeNumber 1s linear;
                         animation-delay: 0.5s;
                         animation-iteration-count: 1;
                     }
-                    
+
                 }
-                &.dislike:checked ~ label{
+
+                &.dislike:checked~label {
                     background-color: rgb(0, 0, 0);
-                    .dislike-number{
+
+                    .dislike-number {
                         animation: changeNumber 1s linear;
                         animation-delay: 0.5s;
                         animation-iteration-count: 1;
@@ -127,9 +135,70 @@
                 }
 
                 @keyframes changeNumber {
-                    0%{ transform: translateY(0); }
-                    55%{ transform:  translateY(100px) }
-                    100%{ transform:  translateY(0)}
+                    0% {
+                        transform: translateY(0);
+                    }
+
+                    55% {
+                        transform: translateY(100px)
+                    }
+
+                    100% {
+                        transform: translateY(0)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .grid_section {
+        display: flex;
+        flex-direction: column;
+        .img-section {
+            width: fit-content;
+            max-height: 270px;
+            min-width: 100px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .information {
+            min-height: 250px;
+
+            .with-subtitle {
+                &.description>span {
+                    
+                    max-height: fit-content;
+                    min-height: fit-content;
+                    overflow-y: auto;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 750px){
+    .grid_section {
+        .img-section {
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 390px){
+    .grid_section{
+        .information{
+            .container-likes{
+                position: relative;
+                flex-direction: column;
+                bottom: 0;
+                
+                & > div{
+                    width: fit-content;
+                    width: 50%;
                 }
             }
         }

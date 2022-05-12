@@ -39,3 +39,13 @@
         }
     }
 }
+
+@media screen and (max-width: 550px){
+    .container-nodata{
+        outline: auto;
+        .img-nodata{
+            width: 80%;
+            margin-bottom: 1em;
+        }
+    }
+}

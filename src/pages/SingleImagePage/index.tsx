@@ -46,7 +46,7 @@ const Main = ({ getPostById }: GetByID) => {
 
 
     return (
-        <div>
+        <div className='container-image-single'>
             <Title label='The Image 🖼️' mustBeBack />
             <hr />
             <ImageInformation {...getPostById} dataLiked={data?.getIsFavorite ?? null} />

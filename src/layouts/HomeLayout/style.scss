@@ -7,7 +7,8 @@
     .container-page {
         width: 90%;
         margin: auto;
-        min-height: 100vh;
+        margin-bottom: 2em;
+        min-height: 94vh;
     }
     .wave{
         position: absolute;
@@ -26,4 +27,13 @@
         }
     }
     
+}
+
+@media screen and (max-width: 1000px){
+    .container-layout-home {
+        grid-template-columns: auto 1fr;
+        .container-page{
+            width: 80%;
+        }
+    }
 }

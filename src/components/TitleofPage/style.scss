@@ -5,9 +5,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+    
     .title-page{
-        text-align: right;
-        flex: 1;
+    
+        border-radius: 5px;
+        
     }
     .btn-back{
         @include mixin.button-component;
@@ -20,4 +22,10 @@
             font-size: 1.5em;
         }
     }
+}
+@media screen and (max-width: 430px){
+    .container-title{
+        flex-direction: column;
+        gap: 1em;
+    } 
 }

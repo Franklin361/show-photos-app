@@ -1,5 +1,4 @@
 import shallow from "zustand/shallow";
-import { useParams } from 'react-router-dom';
 import { useSubscription } from '@apollo/client';
 
 import { NavBarHome, Modal, Wave } from "../../components";
@@ -14,10 +13,8 @@ import "./style.scss";
 export const HomeLayout = ({ children }: IElementJSX) => {
     
     const filter = useFilterSelectedStore(state => state.filter)
-
-    const { image = null } = useParams();
     const { isModalOpen } = useModalStore( (state) => ({ isModalOpen: state.isOpen }), shallow );
-    console.log({filter})
+    
     
     useSubscription<GetByUser>(SUBS_POST_ADDED, {
         variables: { typeSort: filter },  
@@ -41,7 +38,7 @@ export const HomeLayout = ({ children }: IElementJSX) => {
     return (
         <div className='container-layout-home'>
             <Wave color="slateblue" className="wave" />
-            {!image && <NavBarHome />}
+            <NavBarHome />
             <div className="container-page" >{children}</div>
             {isModalOpen && <Modal />}
         </div>

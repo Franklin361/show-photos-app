@@ -44,26 +44,24 @@ export const FormComment = ({ id_post }:Prop) => {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}>
             {() => (
-                <div className=''>
-                    <Form className='form_formik-comments' noValidate ref={form}>
-                        {inputs.map(({ icon, label, name, type, placeholder }) => (
-                            <InputForm
-                                key={name}
-                                icon={icon as any}
-                                name={name}
-                                label={label}
-                                placeholder={placeholder}
-                                type={type as any}
-                                className='input-text-area'
-                            />
-                        ))}
-                        <Button
-                            label='Add comment'
-                            className='btn_submit-comment'
-                            type='submit'
-                        />
-                    </Form>
-                </div>
+                <Form className='form_formik-comments' noValidate ref={form}>
+                {inputs.map(({ icon, label, name, type, placeholder }) => (
+                    <InputForm
+                        key={name}
+                        icon={icon as any}
+                        name={name}
+                        label={label}
+                        placeholder={placeholder}
+                        type={type as any}
+                        className='input-text-area'
+                    />
+                ))}
+                <Button
+                    label='Add comment'
+                    className='btn_submit-comment'
+                    type='submit'
+                />
+            </Form>
             )}
         </Formik>
     )

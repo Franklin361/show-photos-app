@@ -50,3 +50,12 @@
         transform: rotate(45deg);
     }
 }
+
+@media screen and (max-width: 750px){
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+    } 
+    .container-img{
+        display: none;
+    }   
+}
