@@ -10,7 +10,7 @@ export const useGetPost = ({ query, typeAccesData, typeButtons, msg, img, variab
     })
 
     const existData = () => {
-        // console.log({data:data![typeAccesData] , typeAccesData});
+        
         if(!data?.[typeAccesData]) return;
         if(data?.[typeAccesData].length === 0) return <NoData msg={msg} img={img} />
         return <LayoutContainerCards cards={data![typeAccesData]} typeButtons={typeButtons} />

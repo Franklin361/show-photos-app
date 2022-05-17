@@ -29,7 +29,7 @@ export const useFormAuth = ({ typeInput, query }:Props) => {
                 
                 const prop = typeInput === 'register' ? 'createUser' : typeInput;
                 setAuthentication(data![prop])
-                toast.success('Login exitoso! 👌✅', { position: 'bottom-center' })
+                toast.success(data![prop].message, { position: 'bottom-center' })
 
             } catch (error) {
                 showConsoleError(error)

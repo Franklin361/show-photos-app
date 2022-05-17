@@ -75,7 +75,6 @@ interface Props extends GetPostByUser {
 }
 
 export const BasicCard = ({ typeButtons, ...card }: Props) => {
-    console.log("card");
     const {id, url_image } = card
     
     const navigate = useNavigate();

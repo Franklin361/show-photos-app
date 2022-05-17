@@ -11,7 +11,6 @@ export const ImageDraggableSelected = () => {
     );
 
     const handleChange = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
-        // console.log(imageList, addUpdateIndex);
         onSelectedImage(imageList);
     };
 
